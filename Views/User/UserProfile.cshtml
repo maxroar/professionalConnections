@@ -1,0 +1,22 @@
+@model csbb0328.Models.User
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-8">
+            <a href="/showProfile" class="btn btn-primary btn-block">Profile</a>
+        </div>
+        <div class="col-xs-2">
+            <a href="/logout" class="btn btn-block btn-primary">Logout</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>@ViewBag.user.name</h1>
+        </div>
+        <div class="col-xs-12">
+            <p>Description: @ViewBag.user.description</p>
+        </div>
+    </div>
+
+</div>

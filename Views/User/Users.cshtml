@@ -1,0 +1,37 @@
+@model csbb0328.Models.User
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-7">
+            <h1>Welcome, @ViewBag.currentUser.name<span>!</span></h1>
+        </div>
+        <div class="col-xs-2 col-xs-offset-1">
+            <a href="/showProfile" class="btn btn-primary btn-block">Profile</a>
+        </div>
+        <div class="col-xs-2">
+            <a href="/logout" class="btn btn-block btn-primary">Logout</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <h3>Users you may want to connect with:</h3>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    @foreach(var user in ViewBag.otherUsers)
+                    {
+                        <tr>
+                            <td>@user.name</td>
+                            <td><a href="/addConnection/@user.id">Connect</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>  
+        </div>
+    </div>
+
+</div>
